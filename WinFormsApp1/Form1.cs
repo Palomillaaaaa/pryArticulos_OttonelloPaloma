@@ -13,7 +13,7 @@ namespace WinFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             ValidarArchivos();
-            ObjRubros.CargarCombo(cmbrubros);
+            ObjRubros.CargarCombo(cmbRubros);
         }
 
         private void ValidarArchivos()
@@ -29,30 +29,30 @@ namespace WinFormsApp1
                     "Archivo no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnMostrar_Click(object sender, EventArgs e)
         {
-            if (cmbrubros.SelectedItem == null)
+            if (cmbRubros.SelectedItem == null)
             {
                 MessageBox.Show("Por favor seleccione un rubro.", "Aviso",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            ObjArticulos.Listar(dataGridView1, cmbrubros.SelectedItem.ToString());
-            label3.Text = ObjArticulos.CantidadListados.ToString();
-            label4.Text = ObjArticulos.TotalValorStock.ToString("N2");
+            ObjArticulos.Listar(dgvGrilla, cmbRubros.SelectedItem.ToString());
+            lblCantidadValor.Text = ObjArticulos.CantidadListados.ToString();
+            lblTotalValor.Text = ObjArticulos.TotalValorStock.ToString("N2");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnExportar_Click(object sender, EventArgs e)
         {
-            if (cmbrubros.SelectedItem == null)
+            if (cmbRubros.SelectedItem == null)
             {
                 MessageBox.Show("Por favor seleccione un rubro.", "Aviso",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (dataGridView1.Rows.Count == 0)
+            if (dgvGrilla.Rows.Count == 0)
             {
                 MessageBox.Show("No hay datos para exportar. Presione 'Mostrar' primero.", "Aviso",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -61,22 +61,20 @@ namespace WinFormsApp1
 
             SaveFileDialog GuardarDialogo = new SaveFileDialog();
             GuardarDialogo.Filter = "Archivos CSV (*.csv)|*.csv";
-            GuardarDialogo.FileName = "Articulos_" + cmbrubros.SelectedItem.ToString() + ".csv";
+            GuardarDialogo.FileName = "Articulos_" + cmbRubros.SelectedItem.ToString() + ".csv";
             GuardarDialogo.Title = "Exportar articulos";
 
             if (GuardarDialogo.ShowDialog() != DialogResult.OK) return;
 
-            ObjArticulos.Exportar(GuardarDialogo.FileName, cmbrubros.SelectedItem.ToString());
+            ObjArticulos.Exportar(GuardarDialogo.FileName, cmbRubros.SelectedItem.ToString());
 
             MessageBox.Show("Exportacion completada correctamente.", "Exito",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lnkAcercaDe_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             new Form2().ShowDialog();
         }
-
-        private void label1_Click(object sender, EventArgs e) { }
     }
 }

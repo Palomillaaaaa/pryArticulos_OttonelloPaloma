@@ -17,203 +17,202 @@ namespace WinFormsApp1
 
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            groupBox1 = new GroupBox();
-            Codigo = new DataGridViewTextBoxColumn();
-            Descripcion = new DataGridViewTextBoxColumn();
-            Costo = new DataGridViewTextBoxColumn();
-            Stock = new DataGridViewTextBoxColumn();
-            ValorStock = new DataGridViewTextBoxColumn();
-            label1 = new Label();
-            cmbrubros = new ComboBox();
-            lblcantidadArticulos = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            linkLabel1 = new LinkLabel();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            groupBox1.SuspendLayout();
+            dgvGrilla = new DataGridView();
+            grbConsultar = new GroupBox();
+            colCodigo = new DataGridViewTextBoxColumn();
+            colDescripcion = new DataGridViewTextBoxColumn();
+            colCosto = new DataGridViewTextBoxColumn();
+            colStock = new DataGridViewTextBoxColumn();
+            colValorStock = new DataGridViewTextBoxColumn();
+            lblRubros = new Label();
+            cmbRubros = new ComboBox();
+            lblTotalTitulo = new Label();
+            lblCantidadTitulo = new Label();
+            lblCantidadValor = new Label();
+            lblTotalValor = new Label();
+            btnMostrar = new Button();
+            btnExportar = new Button();
+            lnkAcercaDe = new LinkLabel();
+            ((System.ComponentModel.ISupportInitialize)dgvGrilla).BeginInit();
+            grbConsultar.SuspendLayout();
             SuspendLayout();
             //
-            // dataGridView1
+            // dgvGrilla
             //
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Codigo, Descripcion, Costo, Stock, ValorStock });
-            dataGridView1.Location = new Point(31, 22);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(647, 236);
-            dataGridView1.TabIndex = 0;
-            dataGridView1.ReadOnly = true;
-            dataGridView1.AllowUserToAddRows = false;
+            dgvGrilla.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvGrilla.Columns.AddRange(new DataGridViewColumn[] { colCodigo, colDescripcion, colCosto, colStock, colValorStock });
+            dgvGrilla.Location = new Point(31, 22);
+            dgvGrilla.Name = "dgvGrilla";
+            dgvGrilla.Size = new Size(647, 236);
+            dgvGrilla.TabIndex = 0;
+            dgvGrilla.ReadOnly = true;
+            dgvGrilla.AllowUserToAddRows = false;
             //
-            // groupBox1
+            // grbConsultar
             //
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(lblcantidadArticulos);
-            groupBox1.Controls.Add(cmbrubros);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Location = new Point(89, 78);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(709, 422);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Ver Articulo";
+            grbConsultar.Controls.Add(btnExportar);
+            grbConsultar.Controls.Add(btnMostrar);
+            grbConsultar.Controls.Add(lblTotalValor);
+            grbConsultar.Controls.Add(lblCantidadValor);
+            grbConsultar.Controls.Add(lblCantidadTitulo);
+            grbConsultar.Controls.Add(lblTotalTitulo);
+            grbConsultar.Controls.Add(cmbRubros);
+            grbConsultar.Controls.Add(lblRubros);
+            grbConsultar.Controls.Add(dgvGrilla);
+            grbConsultar.Location = new Point(89, 78);
+            grbConsultar.Name = "grbConsultar";
+            grbConsultar.Size = new Size(709, 422);
+            grbConsultar.TabIndex = 1;
+            grbConsultar.TabStop = false;
+            grbConsultar.Text = "Consultar Articulos";
             //
-            // Codigo
+            // colCodigo
             //
-            Codigo.HeaderText = "Codigo";
-            Codigo.Name = "Codigo";
-            Codigo.Width = 110;
+            colCodigo.HeaderText = "Codigo";
+            colCodigo.Name = "colCodigo";
+            colCodigo.Width = 110;
             //
-            // Descripcion
+            // colDescripcion
             //
-            Descripcion.HeaderText = "Descripcion";
-            Descripcion.Name = "Descripcion";
-            Descripcion.Width = 220;
+            colDescripcion.HeaderText = "Descripcion";
+            colDescripcion.Name = "colDescripcion";
+            colDescripcion.Width = 220;
             //
-            // Costo
+            // colCosto
             //
-            Costo.HeaderText = "Costo";
-            Costo.Name = "Costo";
-            Costo.Width = 80;
+            colCosto.HeaderText = "Costo";
+            colCosto.Name = "colCosto";
+            colCosto.Width = 80;
             //
-            // Stock
+            // colStock
             //
-            Stock.HeaderText = "Stock";
-            Stock.Name = "Stock";
-            Stock.Width = 60;
+            colStock.HeaderText = "Stock";
+            colStock.Name = "colStock";
+            colStock.Width = 60;
             //
-            // ValorStock
+            // colValorStock
             //
-            ValorStock.HeaderText = "Valor de Stock";
-            ValorStock.Name = "ValorStock";
-            ValorStock.Width = 100;
+            colValorStock.HeaderText = "Valor de Stock";
+            colValorStock.Name = "colValorStock";
+            colValorStock.Width = 100;
             //
-            // label1
+            // lblRubros
             //
-            label1.AutoSize = true;
-            label1.Location = new Point(31, 287);
-            label1.Name = "label1";
-            label1.Size = new Size(41, 15);
-            label1.TabIndex = 2;
-            label1.Text = "Rubros:";
-            label1.Click += label1_Click;
+            lblRubros.AutoSize = true;
+            lblRubros.Location = new Point(31, 287);
+            lblRubros.Name = "lblRubros";
+            lblRubros.Size = new Size(41, 15);
+            lblRubros.TabIndex = 2;
+            lblRubros.Text = "Rubros:";
             //
-            // cmbrubros
+            // cmbRubros
             //
-            cmbrubros.FormattingEnabled = true;
-            cmbrubros.Location = new Point(31, 305);
-            cmbrubros.Name = "cmbrubros";
-            cmbrubros.Size = new Size(121, 23);
-            cmbrubros.TabIndex = 3;
+            cmbRubros.FormattingEnabled = true;
+            cmbRubros.Location = new Point(31, 305);
+            cmbRubros.Name = "cmbRubros";
+            cmbRubros.Size = new Size(121, 23);
+            cmbRubros.TabIndex = 3;
             //
-            // lblcantidadArticulos
+            // lblTotalTitulo
             //
-            lblcantidadArticulos.AutoSize = true;
-            lblcantidadArticulos.Location = new Point(234, 343);
-            lblcantidadArticulos.Name = "lblcantidadArticulos";
-            lblcantidadArticulos.Size = new Size(32, 15);
-            lblcantidadArticulos.TabIndex = 4;
-            lblcantidadArticulos.Text = "Total:";
+            lblTotalTitulo.AutoSize = true;
+            lblTotalTitulo.Location = new Point(234, 343);
+            lblTotalTitulo.Name = "lblTotalTitulo";
+            lblTotalTitulo.Size = new Size(32, 15);
+            lblTotalTitulo.TabIndex = 4;
+            lblTotalTitulo.Text = "Total:";
             //
-            // label2
+            // lblCantidadTitulo
             //
-            label2.AutoSize = true;
-            label2.Location = new Point(234, 313);
-            label2.Name = "label2";
-            label2.Size = new Size(119, 15);
-            label2.TabIndex = 5;
-            label2.Text = "Cantidad de articulos:";
+            lblCantidadTitulo.AutoSize = true;
+            lblCantidadTitulo.Location = new Point(234, 313);
+            lblCantidadTitulo.Name = "lblCantidadTitulo";
+            lblCantidadTitulo.Size = new Size(119, 15);
+            lblCantidadTitulo.TabIndex = 5;
+            lblCantidadTitulo.Text = "Cantidad de articulos:";
             //
-            // label3
+            // lblCantidadValor
             //
-            label3.AutoSize = true;
-            label3.Location = new Point(359, 311);
-            label3.Name = "label3";
-            label3.Size = new Size(38, 15);
-            label3.TabIndex = 6;
-            label3.Text = "0";
+            lblCantidadValor.AutoSize = true;
+            lblCantidadValor.Location = new Point(359, 311);
+            lblCantidadValor.Name = "lblCantidadValor";
+            lblCantidadValor.Size = new Size(38, 15);
+            lblCantidadValor.TabIndex = 6;
+            lblCantidadValor.Text = "0";
             //
-            // label4
+            // lblTotalValor
             //
-            label4.AutoSize = true;
-            label4.Location = new Point(359, 344);
-            label4.Name = "label4";
-            label4.Size = new Size(38, 15);
-            label4.TabIndex = 7;
-            label4.Text = "0";
+            lblTotalValor.AutoSize = true;
+            lblTotalValor.Location = new Point(359, 344);
+            lblTotalValor.Name = "lblTotalValor";
+            lblTotalValor.Size = new Size(38, 15);
+            lblTotalValor.TabIndex = 7;
+            lblTotalValor.Text = "0";
             //
-            // button1
+            // btnMostrar
             //
-            button1.Location = new Point(512, 310);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 8;
-            button1.Text = "Mostrar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnMostrar.Location = new Point(512, 310);
+            btnMostrar.Name = "btnMostrar";
+            btnMostrar.Size = new Size(75, 23);
+            btnMostrar.TabIndex = 8;
+            btnMostrar.Text = "Mostrar";
+            btnMostrar.UseVisualStyleBackColor = true;
+            btnMostrar.Click += btnMostrar_Click;
             //
-            // button2
+            // btnExportar
             //
-            button2.Location = new Point(514, 344);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 9;
-            button2.Text = "Exportar";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btnExportar.Location = new Point(514, 344);
+            btnExportar.Name = "btnExportar";
+            btnExportar.Size = new Size(75, 23);
+            btnExportar.TabIndex = 9;
+            btnExportar.Text = "Exportar";
+            btnExportar.UseVisualStyleBackColor = true;
+            btnExportar.Click += btnExportar_Click;
             //
-            // linkLabel1
+            // lnkAcercaDe
             //
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(375, 520);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.TabIndex = 10;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Acerca de";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            lnkAcercaDe.AutoSize = true;
+            lnkAcercaDe.Location = new Point(375, 520);
+            lnkAcercaDe.Name = "lnkAcercaDe";
+            lnkAcercaDe.TabIndex = 10;
+            lnkAcercaDe.TabStop = true;
+            lnkAcercaDe.Text = "Acerca de";
+            lnkAcercaDe.LinkClicked += lnkAcercaDe_LinkClicked;
             //
             // Form1
             //
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(892, 563);
-            Controls.Add(linkLabel1);
-            Controls.Add(groupBox1);
+            Controls.Add(lnkAcercaDe);
+            Controls.Add(grbConsultar);
             Name = "Form1";
             Text = "Gestion de Articulos";
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvGrilla).EndInit();
+            grbConsultar.ResumeLayout(false);
+            grbConsultar.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Codigo;
-        private DataGridViewTextBoxColumn Descripcion;
-        private DataGridViewTextBoxColumn Costo;
-        private DataGridViewTextBoxColumn Stock;
-        private DataGridViewTextBoxColumn ValorStock;
-        private GroupBox groupBox1;
-        private Label label1;
-        private Button button2;
-        private Button button1;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private Label lblcantidadArticulos;
-        private ComboBox cmbrubros;
-        private LinkLabel linkLabel1;
+        private DataGridView dgvGrilla;
+        private DataGridViewTextBoxColumn colCodigo;
+        private DataGridViewTextBoxColumn colDescripcion;
+        private DataGridViewTextBoxColumn colCosto;
+        private DataGridViewTextBoxColumn colStock;
+        private DataGridViewTextBoxColumn colValorStock;
+        private GroupBox grbConsultar;
+        private Label lblRubros;
+        private Button btnExportar;
+        private Button btnMostrar;
+        private Label lblTotalValor;
+        private Label lblCantidadValor;
+        private Label lblCantidadTitulo;
+        private Label lblTotalTitulo;
+        private ComboBox cmbRubros;
+        private LinkLabel lnkAcercaDe;
     }
 }
