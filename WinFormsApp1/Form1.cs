@@ -16,6 +16,7 @@ namespace WinFormsApp1
             ObjRubros.CargarCombo(cmbRubros);
         }
 
+        //creo que procedimiento validar para que no se rompa el codigo
         private void ValidarArchivos()
         {
             if (!File.Exists(ObjRubros.NombreArchivo))
@@ -74,7 +75,13 @@ namespace WinFormsApp1
 
         private void lnkAcercaDe_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            //aca llamo al formulario form2
             new Form2().ShowDialog();
+        }
+
+        private void grbConsultar_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

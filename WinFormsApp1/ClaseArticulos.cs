@@ -19,12 +19,15 @@ namespace WinFormsApp1
         public Int32 CantidadListados = 0;
         public Decimal TotalValorStock = 0;
 
+        //metodo mostrar los datos del csv en la grilla
         public void Listar(DataGridView Grilla, string Rubro)
         {
             string DatosLeidos;
+            //abrir
             string[] VecDatos = new string[5];
             Decimal ValorStock;
 
+            //leer
             StreamReader AD = new StreamReader(NombreArchivo);
             DatosLeidos = AD.ReadLine();
             Grilla.Rows.Clear();
@@ -45,11 +48,12 @@ namespace WinFormsApp1
 
                 DatosLeidos = AD.ReadLine();
             }
-
+            //cerrar
             AD.Close();
             AD.Dispose();
         }
 
+        //método exportar a csv
         public void Exportar(string NombreArchivoDestino, string Rubro)
         {
             string DatosLeidos;

@@ -24,58 +24,64 @@ namespace WinFormsApp1
             // lblCarrera
             // 
             lblCarrera.AutoSize = true;
-            lblCarrera.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            lblCarrera.Location = new Point(80, 50);
+            lblCarrera.Font = new Font("Segoe UI Symbol", 16F, FontStyle.Bold);
+            lblCarrera.Location = new Point(114, 83);
+            lblCarrera.Margin = new Padding(4, 0, 4, 0);
             lblCarrera.Name = "lblCarrera";
-            lblCarrera.Size = new Size(153, 20);
+            lblCarrera.Size = new Size(331, 45);
             lblCarrera.TabIndex = 3;
             lblCarrera.Text = "Analista de Sistemas";
             // 
             // lblMateria
             // 
             lblMateria.AutoSize = true;
-            lblMateria.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            lblMateria.Location = new Point(80, 90);
+            lblMateria.Font = new Font("Segoe UI Symbol", 16F, FontStyle.Bold);
+            lblMateria.Location = new Point(114, 150);
+            lblMateria.Margin = new Padding(4, 0, 4, 0);
             lblMateria.Name = "lblMateria";
-            lblMateria.Size = new Size(227, 20);
+            lblMateria.Size = new Size(493, 45);
             lblMateria.TabIndex = 2;
-            lblMateria.Text = "Laboratorio de Programacion 2";
+            lblMateria.Text = "Laboratorio de Programacion II";
             // 
             // lblInstancia
             // 
             lblInstancia.AutoSize = true;
-            lblInstancia.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            lblInstancia.Location = new Point(80, 130);
+            lblInstancia.Font = new Font("Segoe UI Symbol", 16F, FontStyle.Bold);
+            lblInstancia.Location = new Point(114, 217);
+            lblInstancia.Margin = new Padding(4, 0, 4, 0);
             lblInstancia.Name = "lblInstancia";
-            lblInstancia.Size = new Size(167, 20);
+            lblInstancia.Size = new Size(356, 45);
             lblInstancia.TabIndex = 1;
             lblInstancia.Text = "1º Instancia Evaluativa";
             // 
             // lblAlumno
             // 
             lblAlumno.AutoSize = true;
-            lblAlumno.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            lblAlumno.Location = new Point(80, 170);
+            lblAlumno.Font = new Font("Segoe UI Symbol", 16F, FontStyle.Bold);
+            lblAlumno.Location = new Point(114, 283);
+            lblAlumno.Margin = new Padding(4, 0, 4, 0);
             lblAlumno.Name = "lblAlumno";
-            lblAlumno.Size = new Size(429, 20);
+            lblAlumno.Size = new Size(946, 45);
             lblAlumno.TabIndex = 0;
-            lblAlumno.Text = "DNI Alumno 43881903– Nombre Alumno Paloma Ottonello";
+            lblAlumno.Text = "DNI Alumno: 43.881.903– Nombre Alumno: Paloma Ottonello";
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(564, 270);
+            ClientSize = new Size(1075, 373);
             Controls.Add(lblAlumno);
             Controls.Add(lblInstancia);
             Controls.Add(lblMateria);
             Controls.Add(lblCarrera);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(4, 5, 4, 5);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form2";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Acerca de";
+            Load += Form2_Load;
             ResumeLayout(false);
             PerformLayout();
         }

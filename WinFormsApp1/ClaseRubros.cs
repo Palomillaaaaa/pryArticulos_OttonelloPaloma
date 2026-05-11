@@ -9,11 +9,15 @@ namespace WinFormsApp1
             public string Nombre;
         }
 
+        //metodo del combo box para que se llamen los elementos dentro del csv
         public void CargarCombo(ComboBox Combo)
         {
             string DatosLeidos;
+            //abro
 
             StreamReader AD = new StreamReader(NombreArchivo);
+            //leo
+
             DatosLeidos = AD.ReadLine();
             Combo.Items.Clear();
 
@@ -22,6 +26,7 @@ namespace WinFormsApp1
                 Combo.Items.Add(DatosLeidos.Trim());
                 DatosLeidos = AD.ReadLine();
             }
+            //cerrar
 
             AD.Close();
             AD.Dispose();
